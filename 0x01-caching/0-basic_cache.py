@@ -14,8 +14,8 @@ class BasicCache(BaseCaching):
         """_summary_ Add an item to the cache.
 
         Args:
-			key (any): The key to associate with the item.
-			item (any): The item to be added to the cache.
+            key (any): The key to associate with the item.
+            item (any): The item to be added to the cache.
         """
         if key is None or item is None:
             return
@@ -23,9 +23,9 @@ class BasicCache(BaseCaching):
 
     def get(self, key):
         """_summary_ Retrieve item from cache
-        
+
         Args:
-			key (any): The key to associate with the item.
+            key (any): The key to associate with the item.
         """
         if key is None or key not in self.cache_data:
             return None
