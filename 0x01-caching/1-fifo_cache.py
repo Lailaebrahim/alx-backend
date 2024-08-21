@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 from base_caching import BaseCaching
 """_summary_
-    Class BasicCache that inherits from BaseCaching
+    Class FIFOCache that inherits from BaseCaching
 """
 
-class BasicCache(BaseCaching):
+
+class FIFOCache(BaseCaching):
     """
-    Class BasicCache that inherits from BaseCaching and is a caching system
+    Class FIFOCache that inherits from BaseCaching and is a caching system
     """
 
     def __init__(self):
