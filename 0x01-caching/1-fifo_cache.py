@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 from base_caching import BaseCaching
-
 """
 Class FIFOCache that inherits from BaseCaching
 """
