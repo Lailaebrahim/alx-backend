@@ -30,7 +30,7 @@ class LRUCache(BaseCaching):
             key_to_remove, _ = self.cache_data.popitem(True)
             print("DISCARD: {}".format(key_to_remove))
         self.cache_data[key] = item
-        self.cache_data.move_to_end(key, last=False)   
+        self.cache_data.move_to_end(key, last=False)
 
     def get(self, key):
         """
