@@ -34,12 +34,11 @@ class LFUCache(BaseCaching):
             del self.cache_data[key_to_remove]
             del self.keys_freq[key_to_remove]
         if key in self.cache_data:
-            self.keys_freq[key] +=1
+            self.keys_freq[key] += 1
             self.cache_data[key] = item
         else:
             self.keys_freq[key] = 1
             self.cache_data[key] = item
-        
 
     def get(self, key):
         """
