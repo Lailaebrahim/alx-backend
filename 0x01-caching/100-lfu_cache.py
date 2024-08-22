@@ -29,7 +29,7 @@ class LFUCache(BaseCaching):
         if key is None or item is None:
             return
         elif len(self.cache_data) >= self.MAX_ITEMS:
-            key_to_remove, _ = max(self.keys_freq.items(), key=lambda x: x[1])
+            key_to_remove, _ = min(self.keys_freq.items(), key=lambda x: x[1])
             print("DISCARD: {}".format(key_to_remove))
             del self.cache_data[key_to_remove]
             del self.keys_freq[key_to_remove]
