@@ -17,4 +17,4 @@ def index_range(page: int, page_size: int) -> tuple:
     Returns:
         tuple: _description_
     """
-    return ((page - 1) * page_size, ((page - 1) * page_size)+page_size)
+    return ((page - 1) * page_size, ((page - 1) * page_size) + page_size)
