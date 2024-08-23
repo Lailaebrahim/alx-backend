@@ -39,7 +39,6 @@ class Server:
             }
         return self.__indexed_dataset
 
-
 def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
     """
     Get the hypermedia pagination info for a dataset
@@ -58,28 +57,28 @@ def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
          data: the actual page of the dataset
     """
     data = self.indexed_dataset()
-
+    
     # Handle the case where index is None
     if index is None:
         index = 0
-
+    
     assert index >= 0 and index <= max(data.keys()), "Index out of range"
-
+    
     page_data = []
     current_index = index
-
+    
     while len(page_data) < page_size and current_index <= max(data.keys()):
         if current_index in data:
             page_data.append(data[current_index])
         current_index += 1
-
+    
     next_index = current_index if current_index <= max(data.keys()) else None
-
+    
     page_info = {
         'index': index,
         'next_index': next_index,
         'page_size': page_size,
         'data': page_data,
     }
-
+    
     return page_info
