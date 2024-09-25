@@ -8,12 +8,13 @@ const sendNotification = (phoneNumber, message) => {
     console.log(`Sending notification to ${phoneNumber}, with message: ${message}`);
 };
 
-queue.process('push_notification_code', async (job) => {
+queue.process('push_notification_code', (job, done) => {
     try {
         const { phoneNumber, message } = job.data;
         sendNotification(phoneNumber, message);
-       
-    } catch(error) {
-        console.log(error);     
-   }
+        done();
+
+    } catch (error) {
+        console.log(error);
+    }
 });

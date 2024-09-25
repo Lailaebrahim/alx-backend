@@ -16,7 +16,7 @@ const job = queue.create('push_notification_code', jobData)
 // Set up event listeners for the job
 job.on('enqueue', () => {
     // Log when the job is enqueued
-    console.log(`Notification job craeted: ${job.id}`);
+    console.log(`Notification job created: ${job.id}`);
 }).on('complete', () => {
     // Log when the job is completed
     console.log('Notification job completed');
@@ -24,3 +24,5 @@ job.on('enqueue', () => {
     // Log when the job fails along with the error
     console.log('Notification job failed', err);
 });
+
+job.save();
